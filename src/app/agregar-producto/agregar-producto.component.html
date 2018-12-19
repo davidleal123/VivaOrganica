@@ -1,0 +1,30 @@
+<div class="producto-box content">
+
+  <h2>Nuevo producto</h2>
+  <br>
+  <br>
+  <form #formProducto="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" class="form-control" #nombre="ngModel" [(ngModel)]="producto.name" required />
+      <span *ngIf="nombre.touched && !nombre.valid">El nombre no es Correcto</span>
+    </div>
+
+    <div class="form-group">
+      <label for="costo">Costo</label>
+      <input type="number" name="costo" class="form-control" min="0" #costo="ngModel" [(ngModel)]="producto.cost" required />
+      <span *ngIf="costo.touched && !costo.valid">El costo no es Correcto</span>
+    </div>
+
+    <div class="form-group">
+      <label for="equivalente">Equivalente</label>
+      <input type="number" name="equivalente" class="form-control" min="0" #equivalente="ngModel" [(ngModel)]="producto.equivalent" required />
+      <span *ngIf="equivalente.touched && !equivalente.valid">El equivalente no es Correcto</span>
+    </div>
+   
+    <p>
+      <input type="submit" class="btn btn-default" id="btn-alta" value="Dar de alta!" />
+    </p>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+.producto-item{
+    list-style: none;
+    width: 30%;
+    border: 1px solid #ddd;
+    float: left;
+    padding-top: 20px;
+    padding-bottom:  20px;
+    color: gray;
+    background: white;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0px, 0px, 5px, #ddd;
+    min-height: 300px;
+}
+
+ .producto-item h4{
+    color: #444;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    max-width: 300px;
+
+}
+
+ .producto-item .content-data{
+    float: left;
+    margin-left: 20px;
+}
+
+.producto-card {
+    width: 100%;
+    min-height: 410px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+
+.producto-img {
+    width: 175;
+    height: 175;
+}
+
+.producto-card-body{
+    min-height: 140px;
+}

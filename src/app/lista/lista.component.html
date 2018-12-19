@@ -1,0 +1,50 @@
+<ul id="productos-list content">
+  <li *ngFor="let producto of productos" class="producto-item">
+    <!-- <div class="content-data">
+            <h4>{{producto.name}}</h4>
+            <p class="buttons">
+               
+                <a [routerLink]="['/Editar', producto.id]" class="btn btn-editar">
+                    Editar
+                </a>
+                <a (click)="onDeleteConfirm(producto.id)" class="btn btn-eliminar">
+                    Eliminar
+                </a>
+            </p>
+            
+        </div>
+-->
+    <div class="card producto-card">
+      <img class="card-img-top producto-img "  src= '{{url}} + {{producto.image}}' onError="this.src='../../assets/img/VO.png';" alt="Card image">
+      <div class="card-img-overlay producto-card-body">
+        <h4 class="card-title">{{producto.name}}</h4>
+        <p class="card-text">Costo:{{SerializeCurrency(producto.cost)}}</p>
+        <p class="card-text">Equivalencia:{{SerializeCurrency(producto.equivalent)}} </p>
+        <p class="card-text">Unidad de Negocio:{{producto.business_unit_names}} </p>
+
+      </div>
+      <p class="buttons">
+
+        <a [routerLink]="['/Editar', producto.id]" class="btn btn-editar">
+          Editar
+        </a>
+        <a (click)="onDeleteConfirm(producto.id)" class="btn btn-eliminar">
+          Eliminar
+        </a>
+      </p>
+      <div class="seguro" *ngIf="confirmar == producto.id">
+        <p>
+          <strong>¿Estas seguro de querer borrar el producto?</strong>
+        </p>
+        <br>
+        <br>
+        <a (click)="onDeleteProducto(producto.id)" class="btn btn-eliminar">
+          Eliminar
+        </a>
+        <a (click)="onCancelarConfirm(producto.id)" class="btn btn-cancelar">
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>
